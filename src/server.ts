@@ -21,6 +21,7 @@ const server = express();
 
 // Read data from body
 server.use(express.json());
+
 server.use('/api/productos', router);
 
 export default server;

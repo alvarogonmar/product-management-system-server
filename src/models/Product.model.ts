@@ -11,10 +11,11 @@ class Product extends Model {
         name: string
 
     @Column ({
-        type: DataType.FLOAT(6, 2)
+        type: DataType.FLOAT
     })
     price: number
 
+    @Default (true)
     @Column ({
         type: DataType.BOOLEAN
     })
