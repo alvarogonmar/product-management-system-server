@@ -5,9 +5,6 @@ import Product from "../models/Product.model";
 export const createProduct = async (req: Request, res: Response) => {
     // Logic to create a product
 
-    // Validate request body
-    await check('name').notEmpty().withMessage('Name product is required').run(req);
-
     let errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
