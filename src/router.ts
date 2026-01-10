@@ -30,7 +30,7 @@ router.patch("/", (req, res) => { // Placeholder for PATCH request
     res.json({"Hello, World!": "PATCH"}); // Placeholder response
 })
 
-router.delete("/", (req, res) => {
+router.delete("/", (req, res) => { // Placeholder for DELETE request
     res.json({"Hello, World!": "DELETE"});
 });
 
