@@ -16,7 +16,7 @@ router.post("/",
     body('price') // Validate 'price' field
         .isNumeric().withMessage('Price product must be a number') // Check if numeric
         .notEmpty().withMessage('Price product is required') // Check if not empty
-        .custom((value) => value > 0).withMessage('Price product must be greater than zero'),
+        .custom((value) => value > 0).withMessage('Price product must be greater than zero'), // Custom validation to ensure price > 0
 
     
     createProduct
