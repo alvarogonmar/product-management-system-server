@@ -22,7 +22,7 @@ router.post("/",
     createProduct // Handler to create product
 );
 
-router.put("/", (req, res) => { // Placeholder for PUT request
+router.put("/", (req, res) => {
     res.json({"Hello, World!": "PUT"});
 })
 
