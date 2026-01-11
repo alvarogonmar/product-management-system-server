@@ -27,7 +27,7 @@ router.put("/", (req, res) => { // Placeholder for PUT request
 })
 
 router.patch("/", (req, res) => { // Placeholder for PATCH request
-    res.json({"Hello, World!": "PATCH"}); // Placeholder response
+    res.json({"Hello, World!": "PATCH"}); 
 })
 
 router.delete("/", (req, res) => { 
