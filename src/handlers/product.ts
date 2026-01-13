@@ -41,6 +41,11 @@ export const updateProduct = async (req: Request, res: Response) => {
     if(!product){
         return res.status(404).json({error: 'Product not found'});
     }
+
+    // Update product
+    await product.update(req.body);
+    await product.save();
+    
     res.json({data: product});
 
 }

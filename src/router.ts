@@ -15,7 +15,6 @@ router.get("/:id",
 
 router.post("/", 
     body('name').notEmpty().withMessage('Name product is required'),
-
     body('price')
         .isNumeric().withMessage('Price product must be a number')
         .notEmpty().withMessage('Price product is required')
@@ -25,7 +24,17 @@ router.post("/",
     createProduct
 );
 
-router.put("/:id", updateProduct)
+router.put("/:id",
+    body('name').notEmpty().withMessage('Name product is required'),
+    body('price')
+        .isNumeric().withMessage('Price product must be a number')
+        .notEmpty().withMessage('Price product is required')
+        .custom((value) => value > 0).withMessage('Price product must be greater than zero'),
+    body('availability')
+    .isBoolean().withMessage('Availability must be true or false'),
+    handleInputErrors,
+    updateProduct
+)
 
 router.patch("/", (req, res) => { 
     res.json({"Hello, World!": "PATCH"});
