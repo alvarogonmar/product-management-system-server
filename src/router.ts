@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { body, param } from "express-validator";
-import { createProduct, getProductById, getProducts } from "./handlers/product";
+import { createProduct, getProductById, getProducts, updateProduct } from "./handlers/product";
 import { handleInputErrors } from "./middleware";
 
 const router = Router();
@@ -14,27 +14,24 @@ router.get("/:id",
 );
 
 router.post("/", 
-        // Validate request body 
-    body('name').notEmpty().withMessage('Name product is required'), // Validate 'name' field
+    body('name').notEmpty().withMessage('Name product is required'),
 
-    body('price') // Validate 'price' field
-        .isNumeric().withMessage('Price product must be a number') // Check if numeric
-        .notEmpty().withMessage('Price product is required') // Check if not empty
-        .custom((value) => value > 0).withMessage('Price product must be greater than zero'), // Custom validation to ensure price > 0
-        handleInputErrors,
+    body('price')
+        .isNumeric().withMessage('Price product must be a number')
+        .notEmpty().withMessage('Price product is required')
+        .custom((value) => value > 0).withMessage('Price product must be greater than zero'),
+        handleInputErrors,  
     
-    createProduct // Handler to create product
+    createProduct
 );
 
-router.put("/", (req, res) => { // Placeholder for PUT request
-    res.json({"Hello, World!": "PUT"}); // Placeholder response
+router.put("/:id", updateProduct)
+
+router.patch("/", (req, res) => { 
+    res.json({"Hello, World!": "PATCH"});
 })
 
-router.patch("/", (req, res) => { // Placeholder for PATCH request
-    res.json({"Hello, World!": "PATCH"}); // Placeholder response
-})
-
-router.delete("/", (req, res) => { // Placeholder for DELETE request
+router.delete("/", (req, res) => {
     res.json({"Hello, World!": "DELETE"});
 });
 

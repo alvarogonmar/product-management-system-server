@@ -34,3 +34,7 @@ export const createProduct = async (req: Request, res: Response) => {
         console.log(error);
     }
 }
+
+export const updateProduct = async (req: Request, res: Response) => {
+    res.json({"Hello, World!": "PUT"});
+}
