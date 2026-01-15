@@ -5,6 +5,8 @@ describe("GET /api", () => {
     it("shoould send back a json with a message", async () => {
         const res = await request(server).get("/api");
 
-        console.log(res)
+        expect(res.status).toBe(200);
+        expect(res.headers['content-type']).toMatch(/json/);
+        expect(res.body.msg).toBe("From API")
     });
 });

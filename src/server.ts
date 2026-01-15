@@ -24,4 +24,8 @@ server.use(express.json());
 
 server.use('/api/productos', router);
 
+server.get('/api', (req, res) => {
+    res.json({msg: "From API"});
+});
+
 export default server;
