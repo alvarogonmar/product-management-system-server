@@ -7,5 +7,7 @@ describe("POST /api/productos", () => {
             name: "Test Product",
             price: 19.99,
         });
+        expect(response.status).toBe(201);
+        expect(response.body).toHaveProperty("data");
     });
 }); 
