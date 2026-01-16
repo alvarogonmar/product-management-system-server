@@ -10,5 +10,6 @@ describe("GET /api", () => {
         expect(res.body.msg).toBe("From API")
 
         expect(res.status).not.toBe(404);
+        expect(res.body.msg).not.toBe("From API");
     });
 });
