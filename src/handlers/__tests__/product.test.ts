@@ -55,3 +55,7 @@ describe("POST /api/productos", () => {
         expect(response.body).not.toHaveProperty("errors");
     });
 }); 
+
+describe("GET /api/productos/:id", () => {
+    it("GET a JSON response with products", async () => {
+        const response = await request(server).get("/api/productos/1");
