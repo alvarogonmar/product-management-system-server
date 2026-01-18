@@ -120,7 +120,7 @@ describe("PUT /api/productos/:id", () => {
             .send({ // Send the following data in the request body
                 name: "Updated Product", // Updated name
                 price: 0, // Invalid price (0)
-                availability: true
+                availability: true // Updated availability
             });
 
         expect(response.status).toBe(400);
