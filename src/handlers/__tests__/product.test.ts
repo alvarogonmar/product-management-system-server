@@ -123,7 +123,7 @@ describe("PUT /api/productos/:id", () => {
                 availability: true // Updated availability
             });
 
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(400); // Expect a 400 Bad Request status
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toBeTruthy();
         expect(response.body.errors).toHaveLength(1);
