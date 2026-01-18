@@ -119,7 +119,7 @@ describe("PUT /api/productos/:id", () => {
             .put("/api/productos/1") // PUT request to update product with ID 1
             .send({ // Send the following data in the request body
                 name: "Updated Product", // Updated name
-                price: 0, // Invalid price (0)
+                price: 0,
                 availability: true
             });
 
