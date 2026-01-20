@@ -146,4 +146,17 @@ describe("PUT /api/productos/:id", () => {
         expect(response.status).not.toBe(200);
         expect(response.body).not.toHaveProperty("data");
     });
+
+    it("should return a 404 response for a non existent product", async () => {
+        const productID = 2000
+        const response = await request(server)
+            .put(`/api/productos/${productID}`)
+            .send({
+                name: "Updated Product",
+                price: 29.99,
+                availability: true
+            });
+
+
+    });
 });
