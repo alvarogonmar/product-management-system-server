@@ -99,6 +99,21 @@ describe("GET /api/productos/:id", () => {
 });
 
 describe("PUT /api/productos/:id", () => {
+
+    it("should check a valid ID in the URL", async () => {
+        const response = await request(server)
+                        .put("/api/productos/not-valid-url")
+                        .send({
+                            name: "Updated Product",
+                            price: 0,
+                            availability: true
+                        });
+        expect(response.status).toBe(400);
+        expect(response.body).toHaveProperty("errors");
+        expect(response.body.errors).toHaveLength(1);
+        expect(response.body.errors[0].msg).toBe("ID must be an integer");
+    });
+
     it("should display validation error messages when updating a product", async () => {
         const response = await request(server)
             .put("/api/productos/1")
