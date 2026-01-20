@@ -159,7 +159,7 @@ describe("PUT /api/productos/:id", () => {
                 availability: true
             });
 
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(404);
         expect(response.body.error).toBe("Product not found");
         
         expect(response.status).not.toBe(200);
