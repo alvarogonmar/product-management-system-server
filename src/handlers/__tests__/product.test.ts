@@ -193,6 +193,7 @@ describe("PATCH /api/productos/:id", () => {
         expect(response.body.error).toBe("Product not found");
 
         expect(response.status).not.toBe(200);
+        expect(response.body).not.toHaveProperty("data");
     });
 });
 
