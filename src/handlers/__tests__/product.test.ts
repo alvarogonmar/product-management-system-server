@@ -193,6 +193,13 @@ describe("DELETE /api/productos/:id", () => {
         expect(response.body.errors[0].msg).toBe("ID must be an integer");
     });
 
-    
 
+    it("should return a 404 response for a non existent product", async () => {
+        const productID = 2000
+        const response = await request(server)
+            .delete(`/api/productos/${productID}`);
+            
+        expect(response.status).toBe(404);
+        expect(response.body.error).toBe("Product not found");
+    
 });
