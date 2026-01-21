@@ -37,6 +37,7 @@ const router = Router();
  *      summary: Retrieve a list of products
  *      tags:
  *          - Products
+ *      description: Retrieve a list of products from the database
  
  */
 
