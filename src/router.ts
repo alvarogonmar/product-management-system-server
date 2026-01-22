@@ -57,7 +57,17 @@ router.get("/", getProducts) // Get all products
  * /api/productos/{id}:
  *  get:
  *     summary: Get a single product by ID
- * 
+ *     tags:
+ *          - Products
+ *     description: Retrieve a single product by its ID
+ *     parameters:
+ *         - in: path
+ *           name: id
+ *           description: ID of the product to retrieve
+ *           required: true
+ *           schema:
+ *                type: integer
+ *           
  */
 router.get("/:id", // Get product by ID
     param('id').isInt().withMessage('ID must be an integer'), // Validate that id is an integer
