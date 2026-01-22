@@ -137,7 +137,9 @@ router.post("/", // Create a new product
  *     - in: path
  *       name: id
  *       description: ID of the product to update
-
+ *       required: true
+ *       schema:
+ *          type: integer
  * 
  * 
  * 
