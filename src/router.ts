@@ -125,6 +125,17 @@ router.post("/", // Create a new product
     createProduct
 );
 
+/**
+ * @swagger
+ * /api/productos/{id}:
+ * put:
+
+ * 
+ * 
+ * 
+ * 
+ */
+
 router.put("/:id",
     param('id').isInt().withMessage('ID must be an integer'),
     body('name').notEmpty().withMessage('Name product is required'),
