@@ -85,6 +85,14 @@ router.get("/:id", // Get product by ID
     getProductById // Handler function
 );
 
+/**
+ * @swagger
+ * /api/productos:
+ *  post:
+ *    summary: Create a new product
+ */
+
+
 router.post("/", // Create a new product
     body('name').notEmpty().withMessage('Name product is required'), // Validate name is not empty
     body('price') // Validate price
