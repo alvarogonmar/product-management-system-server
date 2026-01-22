@@ -90,6 +90,21 @@ router.get("/:id", // Get product by ID
  * /api/productos:
  *  post:
  *    summary: Create a new product
+ *    tags:
+ *      - Products
+ *    description: Returns a new record in the database
+ *    requestBody:
+ *          required: true
+ *          content: application/json:
+ *             schema:
+ *                  type: object
+ *                  properties:
+ *                     name:
+ *                       type: string
+ *                       description: The name of the product
+ *                     price:
+ *                       type: number
+ *                       description: The price of the product
  */
 
 
