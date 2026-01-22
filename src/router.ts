@@ -51,6 +51,12 @@ const router = Router();
 
 // Routing
 router.get("/", getProducts) // Get all products
+
+/**
+ * @swagger
+ * /api/productos/{id}:
+ * 
+ */
 router.get("/:id", // Get product by ID
     param('id').isInt().withMessage('ID must be an integer'), // Validate that id is an integer
     handleInputErrors,  // Middleware to handle validation errors
