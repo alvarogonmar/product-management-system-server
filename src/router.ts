@@ -222,6 +222,36 @@ router.patch("/:id",
     updateAvailability
 );
 
+/**
+ * @swagger
+ * /api/productos/{id}:
+ *  delete:
+ *     summary: Delete a product by ID
+ *     tags:
+ *        - Products
+ *     description: Returns a confirmation message after deleting a product by its ID
+ *     parameters:
+ *         - in: path
+ *           name: id
+ *           description: ID of the product to delete
+ *           required: true
+ *           schema:
+ *                type: integer
+ *     responses:
+ *       200:
+ *         description: Product updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: string
+ *               value: Product deleted successfully
+ *       400:
+ *         description: Invalid input
+ *       404:
+ *         description: Product not found
+ * 
+ */
+
 router.delete("/:id",
     param('id').isInt().withMessage('ID must be an integer'),
     handleInputErrors,
