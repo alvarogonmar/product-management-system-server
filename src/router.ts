@@ -130,6 +130,9 @@ router.post("/", // Create a new product
  * /api/productos/{id}:
  * put:
  *   summary: Update an existing product
+ *   tags:
+ *     - Products
+ *   description: Update a product by its ID
 
  * 
  * 
