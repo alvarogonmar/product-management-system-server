@@ -133,6 +133,10 @@ router.post("/", // Create a new product
  *   tags:
  *     - Products
  *   description: Update a product by its ID
+ *   parameters:
+ *     - in: path
+ *       name: id
+ *       description: ID of the product to update
 
  * 
  * 
