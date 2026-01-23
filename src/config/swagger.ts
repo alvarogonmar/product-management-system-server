@@ -6,7 +6,7 @@ const options: swaggerJSDoc.Options = {
         tags: [
             {
                 name: "Products", // Tag name
-                description: "API endpoints for managing products"
+                description: "API endpoints for managing products" // Tag description
             }
         ],
         info: {
