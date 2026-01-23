@@ -5,7 +5,7 @@ const options: swaggerJSDoc.Options = {
         openapi: "3.0.0", // Version of OpenAPI
         tags: [
             {
-                name: "Products",
+                name: "Products", // Tag name
                 description: "API endpoints for managing products"
             }
         ],
