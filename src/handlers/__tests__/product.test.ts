@@ -198,7 +198,7 @@ describe("PATCH /api/productos/:id", () => {
 
     it("should update the product availability", async () => { // Test case for updating availability
         const response = await request(server)
-            .patch(`/api/productos/1`); // Assuming product with ID 1 exists
+            .patch(`/api/productos/1`);
 
         expect(response.status).toBe(200); // Expect a successful response
         expect(response.body).toHaveProperty("data"); // Expect the response to have a data property
