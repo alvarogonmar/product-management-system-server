@@ -187,7 +187,7 @@ describe("PATCH /api/productos/:id", () => {
     it("should return a 404 response for a non existent product", async () => { // Missing ID validation test
         const productID = 2000 // Non-existent product ID
         const response = await request(server) // Make the PATCH request
-            .patch(`/api/productos/${productID}`);
+            .patch(`/api/productos/${productID}`); //PATCH endpoint to toggle availability
 
         expect(response.status).toBe(404);
         expect(response.body.error).toBe("Product not found");
