@@ -201,7 +201,7 @@ describe("PATCH /api/productos/:id", () => {
             .patch(`/api/productos/1`);
 
         expect(response.status).toBe(200);
-        expect(response.body).toHaveProperty("data"); // Expect the response to have a data property
+        expect(response.body).toHaveProperty("data");
         expect(response.body.data.availability).toBe(false); // Expect availability to be toggled to false
 
         expect(response.status).not.toBe(404); // Ensure status is not 404
