@@ -185,7 +185,7 @@ describe("PUT /api/productos/:id", () => {
 
 describe("PATCH /api/productos/:id", () => {
     it("should return a 404 response for a non existent product", async () => { 
-        const productID = 2000 // Missing closing slash added here
+        const productID = 2000
         const response = await request(server) // response variable defined here
             .patch(`/api/productos/${productID}`); // patch for updating availability
 
