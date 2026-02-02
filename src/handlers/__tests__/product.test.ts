@@ -200,7 +200,7 @@ describe("PATCH /api/productos/:id", () => {
         const response = await request(server)
             .patch(`/api/productos/1`);
 
-        expect(response.status).toBe(200); // Check for 200 status
+        expect(response.status).toBe(200);
         expect(response.body).toHaveProperty("data"); // Check for data property
         expect(response.body.data.availability).toBe(false); // Check if availability is updated
 
