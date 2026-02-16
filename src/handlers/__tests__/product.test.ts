@@ -187,7 +187,7 @@ describe("PATCH /api/productos/:id", () => {
     it("should return a 404 response for a non existent product", async () => {
         const productID = 2000
         const response = await request(server)
-            .patch(`/api/productos/${productID}`); // No body is needed for this test since we're only checking the response for a non-existent product
+            .patch(`/api/productos/${productID}`);
 
         expect(response.status).toBe(404); // Assert that the response status is 404 Not Found
         expect(response.body.error).toBe("Product not found"); // Assert that the response body contains the expected error message
