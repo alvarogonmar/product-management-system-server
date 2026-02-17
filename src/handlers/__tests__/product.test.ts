@@ -195,7 +195,7 @@ describe("PATCH /api/productos/:id", () => { // PATCH para actualizar solo la di
     });
 
     it("should update the product availability", async () => { // Test case to check if the PATCH endpoint correctly updates the product's availability
-        const response = await request(server)
+        const response = await request(server) // Make the PATCH request to toggle availability for product with ID 1
             .patch(`/api/productos/1`);
 
         expect(response.status).toBe(200);
