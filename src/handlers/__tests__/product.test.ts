@@ -186,7 +186,7 @@ describe("PUT /api/productos/:id", () => {
 describe("PATCH /api/productos/:id", () => { // PATCH para actualizar solo la disponibilidad
     it("should return a 404 response for a non existent product", async () => { // PATCH para actualizar solo la disponibilidad
         const productID = 2000 // const for a non-existent product ID
-        const response = await request(server)
+        const response = await request(server) // Make the PATCH request to update availability
             .patch(`/api/productos/${productID}`);
 
         expect(response.status).toBe(404);
