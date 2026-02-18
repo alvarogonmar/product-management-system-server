@@ -191,7 +191,7 @@ describe("PATCH /api/productos/:id", () => {
 
         expect(response.status).toBe(404);
         expect(response.body.error).toBe("Product not found");
-        expect(response.body).not.toHaveProperty("data"); // Ensure that the response does not contain a data property
+        expect(response.body).not.toHaveProperty("data");
     });
 
     it("should update the product availability", async () => { // Test case to check if the PATCH endpoint correctly updates the product's availability
