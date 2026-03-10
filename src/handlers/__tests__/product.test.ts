@@ -194,7 +194,7 @@ describe("PATCH /api/productos/:id", () => {
         expect(response.body).not.toHaveProperty("data"); // Assert that the response body does not have a "data" property
     });
 
-    it("should update the product availability", async () => {
+    it("should update the product availability", async () => { // Make the PATCH request to update the product availability
         const response = await request(server)
             .patch(`/api/productos/1`);
 
