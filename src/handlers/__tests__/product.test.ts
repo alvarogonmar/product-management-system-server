@@ -191,10 +191,10 @@ describe("PATCH /api/productos/:id", () => {
 
         expect(response.status).toBe(404); // Assert that the response status is 404
         expect(response.body.error).toBe("Product not found"); // Assert that the response body contains the expected error message
-        expect(response.body).not.toHaveProperty("data");
+        expect(response.body).not.toHaveProperty("data"); // Assert that the response body does not have a "data" property
     });
 
-    it("should update the product availability", async () => {
+    it("should update the product availability", async () => { // Make the PATCH request to update the product availability
         const response = await request(server)
             .patch(`/api/productos/1`);
 
