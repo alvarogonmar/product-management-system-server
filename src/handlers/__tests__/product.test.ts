@@ -146,7 +146,7 @@ describe("PUT /api/productos/:id", () => {
 
 
         expect(response.status).not.toBe(200);
-        expect(response.body).not.toHaveProperty("data");
+        expect(response.body).not.toHaveProperty("data"); // Ensures no data object is returned
     });
 
     it("should return a 404 response for a non existent product", async () => {
