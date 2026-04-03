@@ -160,7 +160,7 @@ describe("PUT /api/productos/:id", () => {
             });
 
         expect(response.status).toBe(404);
-        expect(response.body.error).toBe("Product not found");
+        expect(response.body.error).toBe("Product not found"); // Confirms the not found message
         
         expect(response.status).not.toBe(200);
         expect(response.body).not.toHaveProperty("data");
