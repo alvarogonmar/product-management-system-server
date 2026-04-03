@@ -101,7 +101,7 @@ describe("GET /api/productos/:id", () => {
 describe("PUT /api/productos/:id", () => {
 
     it("should check a valid ID in the URL", async () => {
-        const response = await request(server)
+        const response = await request(server) // Inicia la solicitud PATCH al API
                         .put("/api/productos/not-valid-url")
                         .send({
                             name: "Updated Product",
@@ -115,7 +115,7 @@ describe("PUT /api/productos/:id", () => {
     });
 
     it("should display validation error messages when updating a product", async () => {
-        const response = await request(server)
+        const response = await request(server) // Starts the PATCH request
             .put("/api/productos/1")
             .send({});
 
