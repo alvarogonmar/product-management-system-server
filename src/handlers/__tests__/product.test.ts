@@ -125,7 +125,7 @@ describe("PUT /api/productos/:id", () => {
         expect(response.body.errors).toHaveLength(5);
 
         expect(response.status).not.toBe(200);
-        expect(response.body).not.toHaveProperty("data");
+        expect(response.body).not.toHaveProperty("data"); // Ensures no data payload is returned
     });
 
 
