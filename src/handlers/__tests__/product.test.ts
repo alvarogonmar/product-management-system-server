@@ -190,7 +190,7 @@ describe("PATCH /api/productos/:id", () => {
             .patch(`/api/productos/${productID}`); // Targets the missing product ID
 
         expect(response.status).toBe(404);
-        expect(response.body.error).toBe("Product not found"); // Checks the API error message
+        expect(response.body.error).toBe("Product not found");
         expect(response.body).not.toHaveProperty("data");
     });
 
