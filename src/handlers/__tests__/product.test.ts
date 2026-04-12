@@ -190,7 +190,7 @@ describe("PATCH /api/productos/:id", () => {
             .patch(`/api/productos/${productID}`); // Send the request to the appropriate endpoint with the non-existent product ID
 
         expect(response.status).toBe(404); // Verify that the response status code is 404, indicating that the product was not found
-        expect(response.body.error).toBe("Product not found");
+        expect(response.body.error).toBe("Product not found"); // Confirm that the response body contains the expected error message indicating that the product was not found
         expect(response.body).not.toHaveProperty("data");
     });
 
