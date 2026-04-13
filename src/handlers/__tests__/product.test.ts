@@ -189,7 +189,7 @@ describe("PATCH /api/productos/:id", () => {
         const response = await request(server)
             .patch(`/api/productos/${productID}`); 
 
-        expect(response.status).toBe(404); // Verify that the response status code is 404, indicating that the product was not found
+        expect(response.status).toBe(404);
         expect(response.body.error).toBe("Product not found"); // Confirm that the response body contains the expected error message indicating that the product was not found
         expect(response.body).not.toHaveProperty("data"); // Ensure that the response body does not contain a data property, as the product was not found and therefore no data should be returned
     });
