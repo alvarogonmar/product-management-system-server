@@ -196,7 +196,7 @@ describe("PATCH /api/productos/:id", () => {
 
     it("should update the product availability", async () => { // Make the PATCH request to update availability
         const response = await request(server) // Make the PATCH request to update availability
-            .patch(`/api/productos/1`);
+            .patch(`/api/productos/1`); // No body is sent since we're only toggling availability
 
         expect(response.status).toBe(200);
         expect(response.body).toHaveProperty("data");
