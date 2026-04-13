@@ -194,7 +194,7 @@ describe("PATCH /api/productos/:id", () => {
         expect(response.body).not.toHaveProperty("data"); // Ensures no data object is returned
     });
 
-    it("should update the product availability", async () => { // Make the PATCH request to update availability
+    it("should update the product availability", async () => {
         const response = await request(server) // Make the PATCH request to update availability
             .patch(`/api/productos/1`); // No body is sent since we're only toggling availability
 
