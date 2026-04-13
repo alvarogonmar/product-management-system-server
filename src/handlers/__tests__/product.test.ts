@@ -189,7 +189,7 @@ describe("PATCH /api/productos/:id", () => {
         const response = await request(server) // Make the PATCH request to a non-existent product ID
             .patch(`/api/productos/${productID}`); // No body is sent since we're only toggling availability
 
-        expect(response.status).toBe(404);
+        expect(response.status).toBe(404); // Verifies the 404 status code
         expect(response.body.error).toBe("Product not found");
         expect(response.body).not.toHaveProperty("data");
     });
