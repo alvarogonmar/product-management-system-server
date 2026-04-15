@@ -185,7 +185,7 @@ describe("PUT /api/productos/:id", () => {
 
 describe("PATCH /api/productos/:id", () => {
     it("should return a 404 response for a non existent product", async () => {
-        const productID = 2000 // Assuming this ID does not exist in the database
+        const productID = 2000
         const response = await request(server) // Make the PATCH request to a non-existent product ID
             .patch(`/api/productos/${productID}`); // No body is sent since we're only toggling availability
 
