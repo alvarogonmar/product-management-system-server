@@ -187,7 +187,7 @@ describe("PATCH /api/productos/:id", () => {
     it("should return a 404 response for a non existent product", async () => { // Make the PATCH request to a non-existent product ID
         const productID = 2000 // Use a product ID that is unlikely to exist in the test database
         const response = await request(server) // Send the PATCH request to the specified endpoint with the non-existent product ID
-            .patch(`/api/productos/${productID}`);
+            .patch(`/api/productos/${productID}`); // No body is sent since we're only toggling availability
 
         expect(response.status).toBe(404);
         expect(response.body.error).toBe("Product not found");
