@@ -190,7 +190,7 @@ describe("PATCH /api/productos/:id", () => {
             .patch(`/api/productos/${productID}`); // No body is needed for this request as it only toggles availability
 
         expect(response.status).toBe(404); // Verifies the 404 status code
-        expect(response.body.error).toBe("Product not found"); // Confirms the not found message
+        expect(response.body.error).toBe("Product not found");
         expect(response.body).not.toHaveProperty("data");
     });
 
