@@ -204,7 +204,7 @@ describe("PATCH /api/productos/:id", () => {
 
         expect(response.status).not.toBe(404);
         expect(response.status).not.toBe(400);
-        expect(response.body).not.toHaveProperty("error");
+        expect(response.body).not.toHaveProperty("error"); // Ensures no error message is returned
     });
 });
 
