@@ -221,7 +221,7 @@ describe("DELETE /api/productos/:id", () => {
 
     it("should return a 404 response for a non existent product", async () => { // Test case for non-existent product deletion
         const productID = 2000 // Assuming this ID does not exist in the database
-        const response = await request(server) // Make the DELETE request
+        const response = await request(server)
             .delete(`/api/productos/${productID}`);
             
         expect(response.status).toBe(404);
