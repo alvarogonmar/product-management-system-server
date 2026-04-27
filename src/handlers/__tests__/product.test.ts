@@ -227,7 +227,7 @@ describe("DELETE /api/productos/:id", () => {
         expect(response.status).toBe(404); // Verifies that the response status is 404 Not Found
         expect(response.body.error).toBe("Product not found"); // Confirms that the error message indicates the product was not found
 
-        expect(response.status).not.toBe(200); // Ensures that the response status is not 200 OK, which would indicate a successful deletion
+        expect(response.status).not.toBe(200);
     });
 
     it("should delete an existing product", async () => {
