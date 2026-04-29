@@ -225,7 +225,7 @@ describe("DELETE /api/productos/:id", () => {
             .delete(`/api/productos/${productID}`);
             
         expect(response.status).toBe(404);
-        expect(response.body.error).toBe("Product not found");
+        expect(response.body.error).toBe("Product not found"); // Confirms the not found message
 
         expect(response.status).not.toBe(200); // Ensures the product was not found
     });
