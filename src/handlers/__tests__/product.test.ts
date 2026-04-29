@@ -227,7 +227,7 @@ describe("DELETE /api/productos/:id", () => {
         expect(response.status).toBe(404);
         expect(response.body.error).toBe("Product not found");
 
-        expect(response.status).not.toBe(200);
+        expect(response.status).not.toBe(200); // Ensures the product was not found
     });
 
     it("should delete an existing product", async () => {
