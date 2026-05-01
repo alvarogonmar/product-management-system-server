@@ -225,7 +225,7 @@ describe("DELETE /api/productos/:id", () => {
             .delete(`/api/productos/${productID}`); // Expects a 404 Not Found status code in the response
             
         expect(response.status).toBe(404); // Confirms that the status code is 404 Not Found
-        expect(response.body.error).toBe("Product not found");
+        expect(response.body.error).toBe("Product not found"); // Verifies that the response body contains the expected error message indicating that the product was not found
 
         expect(response.status).not.toBe(200);
     });
