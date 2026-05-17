@@ -230,7 +230,7 @@ describe("DELETE /api/productos/:id", () => {
         expect(response.status).not.toBe(200); // Ensures that the response status is not 200 OK, which would indicate a successful deletion
     });
 
-    it("should delete an existing product", async () => {
+    it("should delete an existing product", async () => { // Test case for successful product deletion
         const response = await request(server)
             .delete(`/api/productos/1`);
 
