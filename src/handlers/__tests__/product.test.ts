@@ -232,7 +232,7 @@ describe("DELETE /api/productos/:id", () => {
 
     it("should delete an existing product", async () => { // Test case for successful product deletion
         const response = await request(server)
-            .delete(`/api/productos/1`);
+            .delete(`/api/productos/1`); // Assuming product with ID 1 exists and can be deleted
 
         expect(response.status).toBe(200);
         expect(response.body.data).toBe("Product deleted successfully");
