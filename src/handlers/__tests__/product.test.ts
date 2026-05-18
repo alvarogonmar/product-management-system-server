@@ -231,7 +231,7 @@ describe("DELETE /api/productos/:id", () => {
     });
 
     it("should delete an existing product", async () => { // Test case for successful product deletion
-        const response = await request(server) // Make the DELETE request to delete an existing product (assuming product with ID 1 exists)
+        const response = await request(server)
             .delete(`/api/productos/1`);
 
         expect(response.status).toBe(200);
