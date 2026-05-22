@@ -205,7 +205,7 @@ describe("PATCH /api/productos/:id", () => {
         expect(response.body.data.availability).toBe(false);
 
         expect(response.status).not.toBe(404); // Ensures the product was found
-        expect(response.status).not.toBe(400); // Ensures the response is successful
+        expect(response.status).not.toBe(400);
         expect(response.body).not.toHaveProperty("error");
     });
 });
