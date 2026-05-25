@@ -201,7 +201,7 @@ describe("PATCH /api/productos/:id", () => {
             .patch(`/api/productos/1`); // No body is sent since we're only toggling availability
 
         expect(response.status).toBe(200); // Verify that the response status is 200 OK
-        expect(response.body).toHaveProperty("data"); // Ensure the response contains a data property
+        expect(response.body).toHaveProperty("data");
         expect(response.body.data.availability).toBe(false);
 
         expect(response.status).not.toBe(404);
