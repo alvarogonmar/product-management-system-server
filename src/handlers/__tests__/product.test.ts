@@ -200,7 +200,7 @@ describe("PATCH /api/productos/:id", () => {
         const response = await request(server) // Send the PATCH request to update the availability of the product with ID 1
             .patch(`/api/productos/1`); // No body is sent since the PATCH endpoint toggles availability
 
-        expect(response.status).toBe(200); // Verify that the response status is 200 OK
+        expect(response.status).toBe(200);
         expect(response.body).toHaveProperty("data");
         expect(response.body.data.availability).toBe(false);
 
