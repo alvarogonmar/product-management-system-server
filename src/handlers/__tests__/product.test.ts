@@ -197,7 +197,7 @@ describe("PATCH /api/productos/:id", () => {
     });
 
     it("should update the product availability", async () => { // Make the PATCH request to update availability
-        const response = await request(server) // Send the PATCH request to update the availability of the product with ID 1
+        const response = await request(server)
             .patch(`/api/productos/1`);
 
         expect(response.status).toBe(200);
