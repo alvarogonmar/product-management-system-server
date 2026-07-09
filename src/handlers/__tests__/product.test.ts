@@ -20,7 +20,7 @@ describe("POST /api/productos", () => {
         const response = await request(server).post("/api/productos").send({
             name: "Test Product",
             price: 0,
-        });        
+        });
         expect(response.status).toBe(400);
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toHaveLength(1)
@@ -33,7 +33,7 @@ describe("POST /api/productos", () => {
         const response = await request(server).post("/api/productos").send({
             name: "Test Product",
             price: "hola",
-        });        
+        });
         expect(response.status).toBe(400);
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toHaveLength(2)
@@ -56,7 +56,7 @@ describe("POST /api/productos", () => {
         expect(response.status).not.toBe(200);
         expect(response.body).not.toHaveProperty("errors");
     });
-}); 
+});
 
 describe("GET /api/productos/:id", () => {
     it("should check if api/products url exists", async () => {
@@ -104,12 +104,12 @@ describe("PUT /api/productos/:id", () => {
 
     it("should check a valid ID in the URL", async () => {
         const response = await request(server)
-                        .put("/api/productos/not-valid-url")
-                        .send({
-                            name: "Updated Product",
-                            price: 300,
-                            availability: true
-                        });
+            .put("/api/productos/not-valid-url")
+            .send({
+                name: "Updated Product",
+                price: 300,
+                availability: true
+            });
         expect(response.status).toBe(400);
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toHaveLength(1);
@@ -163,7 +163,7 @@ describe("PUT /api/productos/:id", () => {
 
         expect(response.status).toBe(404); // Verifies the 404 status code
         expect(response.body.error).toBe("Product not found"); // Confirms the not found message
-        
+
         expect(response.status).not.toBe(200);
         expect(response.body).not.toHaveProperty("data");
     });
@@ -189,7 +189,7 @@ describe("PATCH /api/productos/:id", () => {
     it("should return a 404 response for a non existent product", async () => { // Test case for non-existent product
         const productID = 2000 // Assuming this ID does not exist in the database
         const response = await request(server) // Make the PATCH request
-            .patch(`/api/productos/${productID}`);// Send the request to update availability
+            .patch(`/api/productos/${productID}`);
 
         expect(response.status).toBe(404);
         expect(response.body.error).toBe("Product not found");
@@ -213,7 +213,7 @@ describe("PATCH /api/productos/:id", () => {
 describe("DELETE /api/productos/:id", () => {
     it("should check a valid ID in the URL", async () => {
         const response = await request(server)
-                        .delete("/api/productos/not-valid-url");
+            .delete("/api/productos/not-valid-url");
         expect(response.status).toBe(400);
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toHaveLength(1);
@@ -225,7 +225,7 @@ describe("DELETE /api/productos/:id", () => {
         const productID = 2000
         const response = await request(server)
             .delete(`/api/productos/${productID}`);
-            
+
         expect(response.status).toBe(404);
         expect(response.body.error).toBe("Product not found");
 
