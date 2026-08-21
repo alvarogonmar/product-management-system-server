@@ -192,7 +192,7 @@ describe("PATCH /api/productos/:id", () => {
             .patch(`/api/productos/${productID}`); // Send the request without a body since PATCH is used to update availability
 
         expect(response.status).toBe(404);
-        expect(response.body.error).toBe("Product not found"); // Check that the error message is as expected
+        expect(response.body.error).toBe("Product not found");
         expect(response.body).not.toHaveProperty("data");
     });
 
