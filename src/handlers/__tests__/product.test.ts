@@ -1,5 +1,6 @@
 /// <reference types="jest" />
 
+// Import Supertest to send HTTP requests to the application.
 import request from "supertest";
 import server from "../../server";
 
