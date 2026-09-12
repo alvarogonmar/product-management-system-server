@@ -2,6 +2,7 @@
 
 // Import Supertest to send HTTP requests to the application.
 import request from "supertest";
+// Import the Express application used by the endpoint tests.
 import server from "../../server";
 
 describe("POST /api/productos", () => {
