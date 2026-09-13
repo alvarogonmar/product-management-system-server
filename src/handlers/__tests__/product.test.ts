@@ -5,6 +5,7 @@ import request from "supertest";
 // Import the Express application used by the endpoint tests.
 import server from "../../server";
 
+// Group the tests for creating products.
 describe("POST /api/productos", () => {
     it("should display validation errors", async () => {
         const response = await request(server).post("/api/productos").send({});
