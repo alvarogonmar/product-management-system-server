@@ -192,7 +192,7 @@ describe("PATCH /api/productos/:id", () => {
             .patch(`/api/productos/${productID}`); // Send the request without a body since we're just toggling availability
 
         expect(response.status).toBe(404); // Expecting a 404 Not Found status code
-        expect(response.body.error).toBe("Product not found");
+        expect(response.body.error).toBe("Product not found"); // Expecting the error message to indicate that the product was not found
         expect(response.body).not.toHaveProperty("data");
     });
 
