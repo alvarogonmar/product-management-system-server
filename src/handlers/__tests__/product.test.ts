@@ -7,6 +7,7 @@ import server from "../../server";
 
 // Group the tests for creating products.
 describe("POST /api/productos", () => {
+    // Verify validation errors when the request body is empty.
     it("should display validation errors", async () => {
         const response = await request(server).post("/api/productos").send({});
         expect(response.status).toBe(400);
