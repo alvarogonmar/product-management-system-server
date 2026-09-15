@@ -9,6 +9,7 @@ import server from "../../server";
 describe("POST /api/productos", () => {
     // Verify validation errors when the request body is empty.
     it("should display validation errors", async () => {
+        // Submit an empty product payload to exercise required field validation.
         const response = await request(server).post("/api/productos").send({});
         expect(response.status).toBe(400);
         expect(response.body).toHaveProperty("errors");
