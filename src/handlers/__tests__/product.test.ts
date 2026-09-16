@@ -11,6 +11,7 @@ describe("POST /api/productos", () => {
     it("should display validation errors", async () => {
         // Submit an empty product payload to exercise required field validation.
         const response = await request(server).post("/api/productos").send({});
+        // Expect the empty payload to return a bad request status.
         expect(response.status).toBe(400);
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toHaveLength(4)
