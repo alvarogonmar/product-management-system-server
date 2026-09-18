@@ -200,7 +200,7 @@ describe("PATCH /api/productos/:id", () => {
         const response = await request(server) // Make a PATCH request to the endpoint for an existing product ID
             .patch(`/api/productos/1`);
 
-        expect(response.status).toBe(200);
+        expect(response.status).toBe(200); // Expecting a 200 OK status code indicating the update was successful
         expect(response.body).toHaveProperty("data");
         expect(response.body.data.availability).toBe(false);
 
