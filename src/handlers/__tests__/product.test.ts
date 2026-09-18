@@ -15,6 +15,7 @@ describe("POST /api/productos", () => {
         expect(response.status).toBe(400);
         // Check that validation failures include an errors property.
         expect(response.body).toHaveProperty("errors");
+        // Expect four validation errors for the missing product fields.
         expect(response.body.errors).toHaveLength(4)
 
         expect(response.status).not.toBe(404);
