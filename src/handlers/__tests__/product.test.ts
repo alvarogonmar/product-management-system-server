@@ -18,6 +18,7 @@ describe("POST /api/productos", () => {
         // Expect four validation errors for the missing product fields.
         expect(response.body.errors).toHaveLength(4)
 
+        // Ensure the product creation route is found.
         expect(response.status).not.toBe(404);
         expect(response.body.errors).not.toHaveLength(2)
 
