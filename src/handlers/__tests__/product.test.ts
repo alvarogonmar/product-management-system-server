@@ -20,6 +20,7 @@ describe("POST /api/productos", () => {
 
         // Ensure the product creation route is found.
         expect(response.status).not.toBe(404);
+        // Confirm that the empty payload produces more than two errors.
         expect(response.body.errors).not.toHaveLength(2)
 
     });
