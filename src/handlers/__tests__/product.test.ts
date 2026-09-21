@@ -26,6 +26,7 @@ describe("POST /api/productos", () => {
     });
 
 
+    // Verify that a product price must be greater than zero.
     it("should validate that the price is greater than 0", async () => {
         const response = await request(server).post("/api/productos").send({
             name: "Test Product",
