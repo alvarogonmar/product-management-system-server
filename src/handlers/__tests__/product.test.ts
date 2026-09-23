@@ -30,6 +30,7 @@ describe("POST /api/productos", () => {
     it("should validate that the price is greater than 0", async () => {
         // Send a product creation request with an invalid zero price.
         const response = await request(server).post("/api/productos").send({
+            // Provide a valid product name to isolate price validation.
             name: "Test Product",
             price: 0,
         });
