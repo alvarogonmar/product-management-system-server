@@ -32,6 +32,7 @@ describe("POST /api/productos", () => {
         const response = await request(server).post("/api/productos").send({
             // Provide a valid product name to isolate price validation.
             name: "Test Product",
+            // Use zero as the invalid price boundary.
             price: 0,
         });
         expect(response.status).toBe(400);
