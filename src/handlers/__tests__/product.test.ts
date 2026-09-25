@@ -35,6 +35,7 @@ describe("POST /api/productos", () => {
             // Use zero as the invalid price boundary.
             price: 0,
         });
+        // Expect the zero price to produce a bad request status.
         expect(response.status).toBe(400);
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toHaveLength(1)
