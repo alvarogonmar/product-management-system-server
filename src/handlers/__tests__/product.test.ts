@@ -37,6 +37,7 @@ describe("POST /api/productos", () => {
         });
         // Expect the zero price to produce a bad request status.
         expect(response.status).toBe(400);
+        // Check that the zero price response exposes validation errors.
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toHaveLength(1)
 
