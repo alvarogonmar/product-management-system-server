@@ -42,6 +42,7 @@ describe("POST /api/productos", () => {
         // Expect exactly one validation error for a zero price.
         expect(response.body.errors).toHaveLength(1)
 
+        // Ensure zero price validation does not return a missing route status.
         expect(response.status).not.toBe(404);
         expect(response.body.errors).not.toHaveLength(2)
 
