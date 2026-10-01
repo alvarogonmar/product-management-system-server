@@ -50,6 +50,7 @@ describe("POST /api/productos", () => {
     });
     // Verify that the price must be numeric and positive.
     it("should validate that the price is a number and greater than 0", async () => {
+        // Submit a product request containing a nonnumeric price.
         const response = await request(server).post("/api/productos").send({
             name: "Test Product",
             price: "hola",
