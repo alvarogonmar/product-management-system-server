@@ -54,6 +54,7 @@ describe("POST /api/productos", () => {
         const response = await request(server).post("/api/productos").send({
             // Keep the product name valid while testing a nonnumeric price.
             name: "Test Product",
+            // Use a text value to exercise numeric price validation.
             price: "hola",
         });
         expect(response.status).toBe(400);
