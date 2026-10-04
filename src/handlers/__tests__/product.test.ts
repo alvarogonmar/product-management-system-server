@@ -57,6 +57,7 @@ describe("POST /api/productos", () => {
             // Use a text value to exercise numeric price validation.
             price: "hola",
         });
+        // Expect a nonnumeric price to produce a bad request status.
         expect(response.status).toBe(400);
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toHaveLength(2)
