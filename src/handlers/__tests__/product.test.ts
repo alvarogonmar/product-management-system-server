@@ -59,6 +59,7 @@ describe("POST /api/productos", () => {
         });
         // Expect a nonnumeric price to produce a bad request status.
         expect(response.status).toBe(400);
+        // Check that a nonnumeric price response contains validation errors.
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toHaveLength(2)
 
