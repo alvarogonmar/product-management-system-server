@@ -64,6 +64,7 @@ describe("POST /api/productos", () => {
         // Expect two validation errors for a nonnumeric price.
         expect(response.body.errors).toHaveLength(2)
 
+        // Ensure nonnumeric price validation reaches the creation route.
         expect(response.status).not.toBe(404);
         expect(response.body.errors).not.toHaveLength(3)
 
