@@ -72,6 +72,7 @@ describe("POST /api/productos", () => {
     });
 
 
+    // Verify successful creation of a product with valid input.
     it("should create a new product", async () => {
         const response = await request(server).post("/api/productos").send({
             name: "Test Product",
