@@ -76,6 +76,7 @@ describe("POST /api/productos", () => {
     it("should create a new product", async () => {
         // Submit valid product data to the creation endpoint.
         const response = await request(server).post("/api/productos").send({
+            // Set the name of the product created by the test.
             name: "Test Product",
             price: 19.99,
         });
