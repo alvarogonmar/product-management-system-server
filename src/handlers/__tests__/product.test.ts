@@ -78,6 +78,7 @@ describe("POST /api/productos", () => {
         const response = await request(server).post("/api/productos").send({
             // Set the name of the product created by the test.
             name: "Test Product",
+            // Provide a positive numeric price for the new product.
             price: 19.99,
         });
         expect(response.status).toBe(201);
