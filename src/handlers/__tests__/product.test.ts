@@ -81,6 +81,7 @@ describe("POST /api/productos", () => {
             // Provide a positive numeric price for the new product.
             price: 19.99,
         });
+        // Expect the created status after successfully adding a product.
         expect(response.status).toBe(201);
         expect(response.body).toHaveProperty("data");
 
