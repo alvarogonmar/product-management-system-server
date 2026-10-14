@@ -83,6 +83,7 @@ describe("POST /api/productos", () => {
         });
         // Expect the created status after successfully adding a product.
         expect(response.status).toBe(201);
+        // Check that successful product creation returns a data property.
         expect(response.body).toHaveProperty("data");
 
         expect(response.status).not.toBe(400);
