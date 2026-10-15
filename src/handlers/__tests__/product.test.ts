@@ -86,6 +86,7 @@ describe("POST /api/productos", () => {
         // Check that successful product creation returns a data property.
         expect(response.body).toHaveProperty("data");
 
+        // Ensure valid product creation does not return a bad request status.
         expect(response.status).not.toBe(400);
         expect(response.status).not.toBe(200);
         expect(response.body).not.toHaveProperty("errors");
