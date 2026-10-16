@@ -88,6 +88,7 @@ describe("POST /api/productos", () => {
 
         // Ensure valid product creation does not return a bad request status.
         expect(response.status).not.toBe(400);
+        // Distinguish the created status from a generic successful response.
         expect(response.status).not.toBe(200);
         expect(response.body).not.toHaveProperty("errors");
     });
