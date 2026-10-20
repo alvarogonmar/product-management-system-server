@@ -103,6 +103,7 @@ describe("GET /api/productos/:id", () => {
         expect(response.status).not.toBe(404);
     });
 
+    // Verify that the product listing returns JSON data.
     it("GET a JSON response with products", async () => {
         const response = await request(server).get("/api/productos");
         expect(response.status).toBe(200);
