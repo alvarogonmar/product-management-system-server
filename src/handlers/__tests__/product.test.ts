@@ -107,6 +107,7 @@ describe("GET /api/productos/:id", () => {
     it("GET a JSON response with products", async () => {
         // Request the product collection for JSON response assertions.
         const response = await request(server).get("/api/productos");
+        // Expect a successful status when listing products.
         expect(response.status).toBe(200);
         expect(response.headers['content-type']).toMatch(/json/);
         expect(response.body).toHaveProperty("data");
