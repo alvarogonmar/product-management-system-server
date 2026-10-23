@@ -109,6 +109,7 @@ describe("GET /api/productos/:id", () => {
         const response = await request(server).get("/api/productos");
         // Expect a successful status when listing products.
         expect(response.status).toBe(200);
+        // Verify that the response content type identifies JSON.
         expect(response.headers['content-type']).toMatch(/json/);
         expect(response.body).toHaveProperty("data");
         expect(response.body.data).toHaveLength(1);
