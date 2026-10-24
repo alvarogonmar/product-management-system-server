@@ -111,6 +111,7 @@ describe("GET /api/productos/:id", () => {
         expect(response.status).toBe(200);
         // Verify that the response content type identifies JSON.
         expect(response.headers['content-type']).toMatch(/json/);
+        // Check that the product list is included in the data property.
         expect(response.body).toHaveProperty("data");
         expect(response.body.data).toHaveLength(1);
         expect(response.status).not.toBe(404);
