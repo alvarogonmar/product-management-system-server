@@ -113,6 +113,7 @@ describe("GET /api/productos/:id", () => {
         expect(response.headers['content-type']).toMatch(/json/);
         // Check that the product list is included in the data property.
         expect(response.body).toHaveProperty("data");
+        // Expect the collection to contain the product created earlier.
         expect(response.body.data).toHaveLength(1);
         expect(response.status).not.toBe(404);
         expect(response.body).not.toHaveProperty("errors");
