@@ -115,6 +115,7 @@ describe("GET /api/productos/:id", () => {
         expect(response.body).toHaveProperty("data");
         // Expect the collection to contain the product created earlier.
         expect(response.body.data).toHaveLength(1);
+        // Ensure the product collection request does not return not found.
         expect(response.status).not.toBe(404);
         expect(response.body).not.toHaveProperty("errors");
     });
