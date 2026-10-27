@@ -117,6 +117,7 @@ describe("GET /api/productos/:id", () => {
         expect(response.body.data).toHaveLength(1);
         // Ensure the product collection request does not return not found.
         expect(response.status).not.toBe(404);
+        // Ensure a successful product listing contains no validation errors.
         expect(response.body).not.toHaveProperty("errors");
     });
 });
