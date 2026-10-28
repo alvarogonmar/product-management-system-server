@@ -123,6 +123,7 @@ describe("GET /api/productos/:id", () => {
 });
 
 describe("GET /api/productos/:id", () => {
+    // Verify the response when requesting a product that does not exist.
     it("should return a 404 response for a non-existing product", async () => {
         const productID = 2000
         const response = await request(server).get(`/api/productos/${productID}`);
