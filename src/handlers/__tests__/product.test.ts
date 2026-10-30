@@ -127,6 +127,7 @@ describe("GET /api/productos/:id", () => {
     it("should return a 404 response for a non-existing product", async () => {
         // Use an absent product ID to exercise the not found response.
         const productID = 2000
+        // Request the product endpoint using the missing product ID.
         const response = await request(server).get(`/api/productos/${productID}`);
         expect(response.status).toBe(404); // Expects not found status
         expect(response.body).toHaveProperty("error");
