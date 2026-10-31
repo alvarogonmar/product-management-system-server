@@ -130,6 +130,7 @@ describe("GET /api/productos/:id", () => {
         // Request the product endpoint using the missing product ID.
         const response = await request(server).get(`/api/productos/${productID}`);
         expect(response.status).toBe(404); // Expects not found status
+        // Check that the missing product response includes an error property.
         expect(response.body).toHaveProperty("error");
 
         expect(response.body.error).toBe("Product not found")
