@@ -133,6 +133,7 @@ describe("GET /api/productos/:id", () => {
         // Check that the missing product response includes an error property.
         expect(response.body).toHaveProperty("error");
 
+        // Verify the error message returned for a missing product.
         expect(response.body.error).toBe("Product not found")
     })
 
