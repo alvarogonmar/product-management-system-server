@@ -141,6 +141,7 @@ describe("GET /api/productos/:id", () => {
     it("should check a valid ID in the URL", async () => {
         // Send a noninteger product ID to exercise URL parameter validation.
         const response = await request(server).get("/api/productos/not-valid-url");
+        // Expect a bad request status for a noninteger product ID.
         expect(response.status).toBe(400);
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toHaveLength(1);
