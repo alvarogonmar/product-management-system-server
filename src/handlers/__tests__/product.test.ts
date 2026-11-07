@@ -155,6 +155,7 @@ describe("GET /api/productos/:id", () => {
     it("get a JSON response for a single product", async () => {
         // Send a GET request for the existing product.
         const response = await request(server).get("/api/productos/1");
+        // Expect the response to use HTTP 200.
         expect(response.status).toBe(200);
         expect(response.body).toHaveProperty("data");
     });
