@@ -147,6 +147,7 @@ describe("GET /api/productos/:id", () => {
         expect(response.body).toHaveProperty("errors");
         // Expect exactly one validation error for the invalid product ID.
         expect(response.body.errors).toHaveLength(1);
+        // Verify the validation message: ID must be an integer.
         expect(response.body.errors[0].msg).toBe("ID must be an integer");
     });
 
