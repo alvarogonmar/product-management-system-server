@@ -151,6 +151,7 @@ describe("GET /api/productos/:id", () => {
         expect(response.body.errors[0].msg).toBe("ID must be an integer");
     });
 
+    // Test that get a JSON response for a single product.
     it("get a JSON response for a single product", async () => {
         const response = await request(server).get("/api/productos/1");
         expect(response.status).toBe(200);
