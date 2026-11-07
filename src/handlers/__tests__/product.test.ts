@@ -157,6 +157,7 @@ describe("GET /api/productos/:id", () => {
         const response = await request(server).get("/api/productos/1");
         // Expect the response to use HTTP 200.
         expect(response.status).toBe(200);
+        // Check that the response body includes the data property.
         expect(response.body).toHaveProperty("data");
     });
 });
