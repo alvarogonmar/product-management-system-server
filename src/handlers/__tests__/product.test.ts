@@ -167,6 +167,7 @@ describe("PUT /api/productos/:id", () => {
 
     // Test that check a valid ID in the URL.
     it("should check a valid ID in the URL", async () => {
+        // Initialize the HTTP request used by this test.
         const response = await request(server)
             .put("/api/productos/not-valid-url")
             .send({
