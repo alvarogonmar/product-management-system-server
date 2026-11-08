@@ -165,6 +165,7 @@ describe("GET /api/productos/:id", () => {
 // Group the endpoint tests for PUT /api/productos/:id.
 describe("PUT /api/productos/:id", () => {
 
+    // Test that check a valid ID in the URL.
     it("should check a valid ID in the URL", async () => {
         const response = await request(server)
             .put("/api/productos/not-valid-url")
