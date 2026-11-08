@@ -162,6 +162,7 @@ describe("GET /api/productos/:id", () => {
     });
 });
 
+// Group the endpoint tests for PUT /api/productos/:id.
 describe("PUT /api/productos/:id", () => {
 
     it("should check a valid ID in the URL", async () => {
