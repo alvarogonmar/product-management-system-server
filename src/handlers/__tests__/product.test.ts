@@ -180,6 +180,7 @@ describe("PUT /api/productos/:id", () => {
                 // Mark the product as available in the update payload.
                 availability: true
             });
+        // Expect the response to use HTTP 400.
         expect(response.status).toBe(400);
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toHaveLength(1);
