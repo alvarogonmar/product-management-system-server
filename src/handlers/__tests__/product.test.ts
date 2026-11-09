@@ -182,6 +182,7 @@ describe("PUT /api/productos/:id", () => {
             });
         // Expect the response to use HTTP 400.
         expect(response.status).toBe(400);
+        // Check that the response body includes the errors property.
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toHaveLength(1);
         expect(response.body.errors[0].msg).toBe("ID must be an integer");
