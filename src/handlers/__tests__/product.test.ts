@@ -190,6 +190,7 @@ describe("PUT /api/productos/:id", () => {
         expect(response.body.errors[0].msg).toBe("ID must be an integer");
     });
 
+    // Test that display validation error messages when updating a product.
     it("should display validation error messages when updating a product", async () => {
         const response = await request(server)
             .put("/api/productos/1")
