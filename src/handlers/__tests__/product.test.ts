@@ -184,6 +184,7 @@ describe("PUT /api/productos/:id", () => {
         expect(response.status).toBe(400);
         // Check that the response body includes the errors property.
         expect(response.body).toHaveProperty("errors");
+        // Expect 1 validation error in the response.
         expect(response.body.errors).toHaveLength(1);
         expect(response.body.errors[0].msg).toBe("ID must be an integer");
     });
