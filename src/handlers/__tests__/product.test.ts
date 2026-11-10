@@ -192,6 +192,7 @@ describe("PUT /api/productos/:id", () => {
 
     // Test that display validation error messages when updating a product.
     it("should display validation error messages when updating a product", async () => {
+        // Initialize the HTTP request used by this test.
         const response = await request(server)
             .put("/api/productos/1")
             .send({});
