@@ -201,6 +201,7 @@ describe("PUT /api/productos/:id", () => {
 
         // Expect the response to use HTTP 400.
         expect(response.status).toBe(400);
+        // Check that the response body includes the errors property.
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toBeTruthy();
         expect(response.body.errors).toHaveLength(5);
