@@ -199,6 +199,7 @@ describe("PUT /api/productos/:id", () => {
             // Submit an empty body to exercise update validation.
             .send({});
 
+        // Expect the response to use HTTP 400.
         expect(response.status).toBe(400);
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toBeTruthy();
