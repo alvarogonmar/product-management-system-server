@@ -196,6 +196,7 @@ describe("PUT /api/productos/:id", () => {
         const response = await request(server)
             // Send the update request to the product URL under test.
             .put("/api/productos/1")
+            // Submit an empty body to exercise update validation.
             .send({});
 
         expect(response.status).toBe(400);
