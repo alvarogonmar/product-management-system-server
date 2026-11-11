@@ -205,6 +205,7 @@ describe("PUT /api/productos/:id", () => {
         expect(response.body).toHaveProperty("errors");
         // Check that validation errors are present in the response.
         expect(response.body.errors).toBeTruthy();
+        // Expect 5 validation errors in the response.
         expect(response.body.errors).toHaveLength(5);
 
         expect(response.status).not.toBe(200);
