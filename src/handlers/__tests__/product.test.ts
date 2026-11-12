@@ -219,6 +219,7 @@ describe("PUT /api/productos/:id", () => {
         const response = await request(server) // Make the PUT request
             // Send the update request to the product URL under test.
             .put("/api/productos/1")
+            // Attach the product fields to the request body.
             .send({
                 name: "Updated Product",
                 price: 0,
