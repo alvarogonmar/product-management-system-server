@@ -217,6 +217,7 @@ describe("PUT /api/productos/:id", () => {
     // Test that validate that the price is greater than 0 when updating a product.
     it("should validate that the price is greater than 0 when updating a product", async () => {
         const response = await request(server) // Make the PUT request
+            // Send the update request to the product URL under test.
             .put("/api/productos/1")
             .send({
                 name: "Updated Product",
