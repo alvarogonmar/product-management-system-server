@@ -208,6 +208,7 @@ describe("PUT /api/productos/:id", () => {
         // Expect 5 validation errors in the response.
         expect(response.body.errors).toHaveLength(5);
 
+        // Ensure the response does not use HTTP 200.
         expect(response.status).not.toBe(200);
         expect(response.body).not.toHaveProperty("data"); // Ensures no data payload is returned
     });
