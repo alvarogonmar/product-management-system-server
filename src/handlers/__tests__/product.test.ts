@@ -233,6 +233,7 @@ describe("PUT /api/productos/:id", () => {
         expect(response.status).toBe(400);
         // Check that the response body includes the errors property.
         expect(response.body).toHaveProperty("errors");
+        // Check that validation errors are present in the response.
         expect(response.body.errors).toBeTruthy();
         expect(response.body.errors).toHaveLength(1);
         expect(response.body.errors[0].msg).toBe("Price product must be greater than zero");
