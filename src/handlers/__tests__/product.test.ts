@@ -225,6 +225,7 @@ describe("PUT /api/productos/:id", () => {
                 name: "Updated Product",
                 // Use zero to test the lower price boundary.
                 price: 0,
+                // Mark the product as available in the update payload.
                 availability: true
             });
 
