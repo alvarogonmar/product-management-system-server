@@ -223,6 +223,7 @@ describe("PUT /api/productos/:id", () => {
             .send({
                 // Provide the updated product name in the request.
                 name: "Updated Product",
+                // Use zero to test the lower price boundary.
                 price: 0,
                 availability: true
             });
