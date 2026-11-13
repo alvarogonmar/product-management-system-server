@@ -229,6 +229,7 @@ describe("PUT /api/productos/:id", () => {
                 availability: true
             });
 
+        // Expect the response to use HTTP 400.
         expect(response.status).toBe(400);
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toBeTruthy();
