@@ -237,6 +237,7 @@ describe("PUT /api/productos/:id", () => {
         expect(response.body.errors).toBeTruthy();
         // Expect 1 validation error in the response.
         expect(response.body.errors).toHaveLength(1);
+        // Verify the validation message: Price product must be greater than zero.
         expect(response.body.errors[0].msg).toBe("Price product must be greater than zero");
 
 
