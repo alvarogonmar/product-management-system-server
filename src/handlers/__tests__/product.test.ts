@@ -246,6 +246,7 @@ describe("PUT /api/productos/:id", () => {
         expect(response.body).not.toHaveProperty("data"); // Ensures no data object is returned
     });
 
+    // Test that return a 404 response for a non existent product.
     it("should return a 404 response for a non existent product", async () => {
         const productID = 2000
         const response = await request(server)
