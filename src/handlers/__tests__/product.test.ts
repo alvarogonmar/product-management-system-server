@@ -241,6 +241,7 @@ describe("PUT /api/productos/:id", () => {
         expect(response.body.errors[0].msg).toBe("Price product must be greater than zero");
 
 
+        // Ensure the response does not use HTTP 200.
         expect(response.status).not.toBe(200);
         expect(response.body).not.toHaveProperty("data"); // Ensures no data object is returned
     });
