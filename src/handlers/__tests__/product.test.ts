@@ -250,6 +250,7 @@ describe("PUT /api/productos/:id", () => {
     it("should return a 404 response for a non existent product", async () => {
         // Choose an absent product ID for the missing product scenario.
         const productID = 2000
+        // Initialize the HTTP request used by this test.
         const response = await request(server)
             .put(`/api/productos/${productID}`)
             .send({
