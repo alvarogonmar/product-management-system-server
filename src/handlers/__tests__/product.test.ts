@@ -256,6 +256,7 @@ describe("PUT /api/productos/:id", () => {
             .put(`/api/productos/${productID}`)
             // Attach the product fields to the request body.
             .send({
+                // Provide the updated product name in the request.
                 name: "Updated Product",
                 price: 29.99,
                 availability: true
