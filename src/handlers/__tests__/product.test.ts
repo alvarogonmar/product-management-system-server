@@ -258,6 +258,7 @@ describe("PUT /api/productos/:id", () => {
             .send({
                 // Provide the updated product name in the request.
                 name: "Updated Product",
+                // Set the numeric price supplied by this test.
                 price: 29.99,
                 availability: true
             });
