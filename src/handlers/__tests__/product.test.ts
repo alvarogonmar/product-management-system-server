@@ -275,6 +275,7 @@ describe("PUT /api/productos/:id", () => {
 
     // Test that update an existing product with valid data.
     it("should update an existing product with valid data", async () => {
+        // Initialize the HTTP request used by this test.
         const response = await request(server)
             .put(`/api/productos/1`)
             .send({
