@@ -269,6 +269,7 @@ describe("PUT /api/productos/:id", () => {
 
         // Ensure the response does not use HTTP 200.
         expect(response.status).not.toBe(200);
+        // Ensure the response body omits the data property.
         expect(response.body).not.toHaveProperty("data");
     });
 
