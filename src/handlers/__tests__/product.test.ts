@@ -260,6 +260,7 @@ describe("PUT /api/productos/:id", () => {
                 name: "Updated Product",
                 // Set the numeric price supplied by this test.
                 price: 29.99,
+                // Mark the product as available in the update payload.
                 availability: true
             });
 
