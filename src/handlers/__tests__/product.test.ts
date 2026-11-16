@@ -267,6 +267,7 @@ describe("PUT /api/productos/:id", () => {
         expect(response.status).toBe(404); // Verifies the 404 status code
         expect(response.body.error).toBe("Product not found"); // Confirms the not found message
 
+        // Ensure the response does not use HTTP 200.
         expect(response.status).not.toBe(200);
         expect(response.body).not.toHaveProperty("data");
     });
