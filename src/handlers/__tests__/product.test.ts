@@ -273,6 +273,7 @@ describe("PUT /api/productos/:id", () => {
         expect(response.body).not.toHaveProperty("data");
     });
 
+    // Test that update an existing product with valid data.
     it("should update an existing product with valid data", async () => {
         const response = await request(server)
             .put(`/api/productos/1`)
