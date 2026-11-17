@@ -279,6 +279,7 @@ describe("PUT /api/productos/:id", () => {
         const response = await request(server)
             // Send the update request to the product URL under test.
             .put(`/api/productos/1`)
+            // Attach the product fields to the request body.
             .send({
                 name: "Updated Product",
                 price: 29.99,
